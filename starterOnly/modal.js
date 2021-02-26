@@ -51,18 +51,33 @@ closeModalBtn.addEventListener('click', ($event) => {
   closeModal();
 });
 
+// fermer écran succès
+closeSuccessBtn.addEventListener('click', ($event) => {
+  $event.preventDefault();
+  closeModal();
+});
 
 function closeModal() {
   modalbg.style.display = "none";
+
+  // Efface le formulaire à la fermeture
+  first_errMessage.style.display = "none";  
+  last_errMessage.style.display = "none";  
+  email_errMessage.style.display = "none";  
+  birthdate_errMessage.style.display = "none";  
+  quantity_errMessage.style.display = "none";  
+  location_errMessage.style.display = "none";  
+  checkbox1_errMessage.style.display = "none";  
+  submitSucess_message.style.display = "none"; 
+  form_screen.style.display = "block";
+  success_screen.style.display = "none";
 }
 
-// Vérifie si le mail est valide
-function confirmEmail(email) {
-  const re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
-  return re.test(String(email).toLowerCase());
-}
+
 
 // Vérifie si la saisie est valide, sinon message d'erreur
+
+// <!-- ******************************** Prénom ***************************** -->
 function validateFirst(){
   if(formFirst.value.length<=1)
   {
@@ -76,6 +91,7 @@ function validateFirst(){
   }
 }
 
+// <!-- ******************************** Nom ***************************** -->
 function validateLast(){
   if(formLast.value.length<=1)
   {
@@ -89,19 +105,28 @@ function validateLast(){
   }
 }
 
-function validateEmail(){
-  if(!confirmEmail(formEmail.value))
+// <!-- ******************************** Email ***************************** -->
+function checkEmail(email) {
+  const re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+  return re.test(email);
+}
+
+function validateEmail() {
+let email = document.getElementById("email").value;
+
+  if(checkEmail(email))
   {
+    emailErrorMessage.style.display = "none";
+    return true;
+     
+  } else {
     emailErrorMessage.textContent = "Vous devez saisir une adresse mail valide. ";
     emailErrorMessage.style.display = "block";  
     return false;  
   }
-  else{
-    emailErrorMessage.style.display = "none"; 
-    return true;   
-  }
 }
 
+// <!-- ******************************** Date de naissance ***************************** -->
 function validateBirthdate(){
   if(!formBirthdate.value)
   {
@@ -115,6 +140,7 @@ function validateBirthdate(){
   }
 }
 
+// <!-- ******************************** Tournois ***************************** -->
 function validateQuantity(){
   if(formQuantity.value < 0 || formQuantity.value === "")
   {
@@ -128,40 +154,59 @@ function validateQuantity(){
   }
 }
 
+// <!-- ******************************** Villes ***************************** -->
 function validateLocation(){
-  let oneIsChecked = false;
-  for(let i=0; i<formLocation.length;i++)
-  {
-    if(formLocation[i].checked)
-    {
-      oneIsChecked = true;
-      break;
-    }
+  let boxChecked = false;
+  
+  if(document.getElementById("location1").checked){
+    boxChecked = true;
   }
 
-  if(!oneIsChecked)
-  {
-    locationErrorMessage.textContent = "Vous devez choisir une option.";
-    locationErrorMessage.style.display = "block";  
-    return false;  
+  else if(document.getElementById("location2").checked){
+    boxChecked = true;
   }
-  else{
+
+  else if(document.getElementById("location3").checked){
+    boxChecked = true;
+  }
+
+  else if(document.getElementById("location4").checked){
+    boxChecked = true;
+  }
+
+  else if(document.getElementById("location5").checked){
+    boxChecked = true;
+  }
+
+  else if(document.getElementById("location6").checked){
+    boxChecked = true;
+  }
+
+  if(boxChecked) {
     locationErrorMessage.style.display = "none";   
     return true; 
   }
+
+  else {
+    locationErrorMessage.textContent = "Vous devez choisir au moins une option.";
+    locationErrorMessage.style.display = "block";  
+    return false;  
+  }
+
 }
 
+// <!-- ******************************** Conditions d'utilisation ***************************** -->
 function validateCheckbox1(){
-  if(!formCheckbox1.checked)
-  {
+  if(formCheckbox1.checked) {
+    checkbox1ErrorMessage.style.display = "none";    
+    return true;
+
+  } else {
     checkbox1ErrorMessage.textContent = "Vous devez vérifier que vous acceptez les termes et conditions.";
     checkbox1ErrorMessage.style.display = "block";  
     return false;  
   }
-  else{
-    checkbox1ErrorMessage.style.display = "none";    
-    return true;
-  }
+  
 }
 
 
@@ -178,5 +223,16 @@ formSubmitBtn.addEventListener('click', ($event) => {
   && validateCheckbox1())
   {
     submitSucess_message.style.display = "block";
+    setTimeout(showSuccessScreen, 2000);
   }
 });
+
+// Ecran de confirmation 
+function showSuccessScreen()
+{
+  form_screen.style.display = "none";
+  success_screen.style.display = "flex";
+  success_screen.style.flexDirection = "column";
+  success_screen.style.justifyContent = "space-between";
+
+}

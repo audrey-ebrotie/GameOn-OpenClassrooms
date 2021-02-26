@@ -230,8 +230,8 @@ input {
   height: 48px;
 }
 .submitSuccess{
-  font-size: 0.7em;
-  color: green;
+  font-size: 1em;
+  color: #279e7a;
   display: none;
   margin-top: 10px;
   margin-bottom: 0px;
