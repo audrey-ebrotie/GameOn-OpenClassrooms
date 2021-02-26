@@ -46,31 +46,28 @@
       <div class="hero-img">
         <img src="./bg_img.jpg" alt="img" />
       </div>
-      <button class="btn-signup modal-btn">
-        je m'inscris
-      </button>
     </div>
 
     <div class="bground">
       <div class="content" id="modalForm">
         <span class="close closeModal-btn" id="btn-close"></span>
-        <div class="modal-body" id="formScreen">
+        <div class="modal-body" id="form-screen">
           <form name="reserve" action="index.html" method="get" onsubmit="return validate();">
 
 
             <!-- ******************************** Prénom ***************************** -->
             <div class="formData">
               <label for="first">Prénom</label> <br>
-              <input class="text-control" type="text" id="first" name="first" minlength="2" /> <br>
+              <input class="text-control" type="text" id="first-name" name="first name" minlength="2" /> <br>
             </div>
-            <span class="errorMessage" id="first_errorMessage"></span>
+            <span class="errorMessage" id="first-name_errorMessage"></span>
 
             <!-- ******************************** Nom ***************************** -->
             <div class="formData">
               <label for="last">Nom</label> <br>
-              <input class="text-control" type="text" id="last" name="last" /> <br>
+              <input class="text-control" type="text" id="last-name" name="last name" /> <br>
             </div>
-            <span class="errorMessage" id="last_errorMessage"></span>
+            <span class="errorMessage" id="last-name_errorMessage"></span>
 
             <!-- ******************************** Email ***************************** -->
             <div class="formData">
@@ -96,37 +93,37 @@
             <!-- ******************************** Villes ***************************** -->
             <p class="text-label">Quelles villes ?</p>
             <div class="formData">
-              <input class="checkbox-input" type="radio" id="location1" name="location1" value="New York" />
+              <input class="checkbox-input" type="radio" id="location1" name="location" value="New York" />
               <label class="checkbox-label" for="location1">
                 <span class="checkbox-icon"></span>
                 New York
               </label>
 
-              <input class="checkbox-input" type="radio" id="location2" name="location2" value="San Francisco" />
+              <input class="checkbox-input" type="radio" id="location2" name="location" value="San Francisco" />
               <label class="checkbox-label" for="location2">
                 <span class="checkbox-icon"></span>
                 San Francisco
               </label>
 
-              <input class="checkbox-input" type="radio" id="location3" name="location3" value="Seattle" />
+              <input class="checkbox-input" type="radio" id="location3" name="location" value="Seattle" />
               <label class="checkbox-label" for="location3">
                 <span class="checkbox-icon"></span>
                 Seattle
               </label>
 
-              <input class="checkbox-input" type="radio" id="location4" name="location4" value="Chicago" />
+              <input class="checkbox-input" type="radio" id="location4" name="location" value="Chicago" />
               <label class="checkbox-label" for="location4">
                 <span class="checkbox-icon"></span>
                 Chicago
               </label>
 
-              <input class="checkbox-input" type="radio" id="location5" name="location5" value="Boston" />
+              <input class="checkbox-input" type="radio" id="location5" name="location" value="Boston" />
               <label class="checkbox-label" for="location5">
                 <span class="checkbox-icon"></span>
                 Boston
               </label>
 
-              <input class="checkbox-input" type="radio" id="location6" name="location6" value="Portland" />
+              <input class="checkbox-input" type="radio" id="location6" name="location" value="Portland" />
               <label class="checkbox-label" for="location6">
                 <span class="checkbox-icon"></span>
                 Portland
@@ -136,7 +133,7 @@
 
             <!-- ******************************** Condition d'utilisation ***************************** -->
             <div class="formData">
-              <input class="checkbox-input" type="checkbox" id="checkbox1" checked />
+              <input class="checkbox-input" type="checkbox" id="checkbox1" />
               <label class="checkbox2-label" for="checkbox1" required>
                 <span class="checkbox-icon"></span>
                 J'ai lu et accepté les conditions d'utilisation.
@@ -158,13 +155,13 @@
 
 
 
-            <span class="submitSuccess" id="modal-submitSucess">
+            <span class="submitSuccess" id="modal-submitSuccess">
               Réservation en cours d'envoi ...
             </span>
           </form>
         </div>
-        <div class="modal-success" id="successScreen">
-          <span class="success-text" id="successText"> Merci ! <br> Votre réservation a bien été prise en compte.
+        <div class="modal-success" id="success-screen">
+          <span class="success-text" id="success-text"> Merci ! <br> Votre réservation a bien été prise en compte.
           </span>
           <input class="btn-submit" type="button" id="btn-success" class="button" value="Close" />
         </div>
