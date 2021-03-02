@@ -5,28 +5,33 @@
   <meta charset="utf-8" />
   <title>Reservation</title>
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <link rel="stylesheet" href="modal.css" />
+  <link rel="stylesheet" href="/css/style.css" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   <link href="https://fonts.googleapis.com/css?family=DM+Sans" rel="stylesheet" />
 </head>
 
 <body>
-  <div class="topnav" id="myTopnav">
-    <div class="header-logo">
-      <img alt="logo" src="Logo.png" width="auto" height="auto" />
-    </div>
+  <header>
+    <div class="topnav" id="myTopnav">
+      <div class="header-logo">
+        <img alt="logo" src="Logo.png" width="auto" height="auto" />
+      </div>
 
-    <div class="main-navbar">
-      <a href="#" class="active"><span>Accueil</span></a>
-      <a href="#"><span>Détails de l'évènement</span></a>
-      <a href="#"><span>À propos</span></a>
-      <a href="#"><span>Contact</span></a>
-      <a href="#"><span>Évènements passés</span></a>
-      <a href="javascript:void(0);" class="icon" onclick="editNav()">
-        <i class="fa fa-bars"></i>
-      </a>
+
+      <nav>
+        <div class="main-navbar">
+          <a href="#" class="active"><span>Détails de l'évènement</span></a>
+          <a href="#"><span>À propos</span></a>
+          <a href="#"><span>Contact</span></a>
+          <a href="#"><span>Évènements passés</span></a>
+          <a href="javascript:void(0);" class="icon" onclick="editNav()">
+            <i class="fa fa-bars"></i>
+          </a>
+        </div>
     </div>
-  </div>
+    </nav>
+
+  </header>
 
   <main>
     <div class="hero-section">
@@ -44,7 +49,8 @@
         </button>
       </div>
       <div class="hero-img">
-        <img src="./bg_img.jpg" alt="img" />
+
+        <img src="./bg_img.png" alt="image gaming" />
       </div>
     </div>
 
@@ -151,19 +157,20 @@
             </div>
 
             <!-- ******************************** Bouton valider ***************************** -->
-            <input class="btn-submit" type="submit" id="btn-submit" class="button" value="C'est parti" />
+            <button class="btn-submit" type="submit" id="btn-submit" class="button" value="C'est parti">C'est parti
+              !</button>
 
 
 
-            <span class="submitSuccess" id="modal-submitSuccess">
-              Réservation en cours d'envoi ...
+            <span class="submitSending" id="modal-submitSending">
+              Envoi en cours...
             </span>
           </form>
         </div>
-        <div class="modal-success" id="success-screen">
-          <span class="success-text" id="success-text"> Merci ! <br> Votre réservation a bien été prise en compte.
+        <div class="modal-confirmation" id="confirmation-screen">
+          <span class="confirmation-text" id="confirmation-text"> Merci ! Votre réservation a été reçue.
           </span>
-          <input class="btn-submit" type="button" id="btn-success" class="button" value="Close" />
+          <button class="btn-submit" type="button" id="btn-confirmation" class="button" value="Close">Fermer</button>
         </div>
       </div>
   </main>

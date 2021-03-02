@@ -32,12 +32,12 @@ const quantityErrorMessage = document.getElementById('quantity_errorMessage');
 const locationErrorMessage = document.getElementById('location_errorMessage');
 const checkbox1ErrorMessage = document.getElementById('checkbox1_errorMessage');
 
-const submitSuccessMessage = document.getElementById('modal-submitSuccess');
+const submitSendingMessage = document.getElementById('modal-submitSending');
 
 const formScreen = document.getElementById('form-screen');
-const successScreen = document.getElementById('success-screen');
-const closeSuccessBtn = document.getElementById('btn-success');
-const SuccessTxt = document.getElementById('success-text');
+const confirmationScreen = document.getElementById('confirmation-screen');
+const closeConfirmationBtn = document.getElementById('btn-confirmation');
+const confirmationTxt = document.getElementById('confirmation-text');
 
 // ouvrir formulaire
 modalBtn.forEach((btn) => btn.addEventListener("click", launchModal));
@@ -47,16 +47,10 @@ function launchModal() {
 }
 
 // fermer formulaire
-closeModalBtn.addEventListener('click', ($event) => {
-  $event.preventDefault();
-  closeModal();
-});
+closeModalBtn.addEventListener('click', closeModal);
 
 // fermer écran succès
-closeSuccessBtn.addEventListener('click', ($event) => {
-  $event.preventDefault();
-  closeModal();
-});
+closeConfirmationBtn.addEventListener('click', closeModal);
 
 function closeModal() {
   modalbg.style.display = "none";
@@ -71,7 +65,7 @@ function closeModal() {
   formCheckbox1.checked = false;
   formCheckbox2.checked = false;
 
-    // Retire les messages d'erreur après fermeture 
+    // Retire les messages d'erreur après fermeture modal
   firstNameErrorMessage.style.display = "none";  
   lastNameErrorMessage.style.display = "none";  
   emailErrorMessage.style.display = "none";  
@@ -79,11 +73,11 @@ function closeModal() {
   quantityErrorMessage.style.display = "none";  
   locationErrorMessage.style.display = "none";  
   checkbox1ErrorMessage.style.display = "none";  
-  submitSuccessMessage.style.display = "none"; 
+  submitSendingMessage.style.display = "none"; 
 
-    // Réinitialise l'état du form après validation et retire le success screen
+    // Réinitialise l'état du form après validation et retire affichage final confirmation
   formScreen.style.display = "block";
-  successScreen.style.display = "none";
+  confirmationScreen.style.display = "none";
 }
 
 
@@ -91,7 +85,7 @@ function closeModal() {
 
 // <!-- ******************************** Prénom ***************************** -->
 function validateFirstName(){
-  if(formFirstName.value.length<=1)
+  if(formFirstName.value.length <= 1)
   {
     firstNameErrorMessage.textContent = "Veuillez entrer 2 caractères ou plus pour le champ du prénom.";
     firstNameErrorMessage.style.display = "block";    
@@ -105,7 +99,7 @@ function validateFirstName(){
 
 // <!-- ******************************** Nom ***************************** -->
 function validateLastName(){
-  if(formLastName.value.length<=1)
+  if(formLastName.value.length <= 1)
   {
     lastNameErrorMessage.textContent = "Veuillez entrer 2 caractères ou plus pour le champ du nom.";
     lastNameErrorMessage.style.display = "block";  
@@ -221,10 +215,10 @@ function validateCheckbox1(){
   
 }
 
+// Si tous les champs bien remplis > Submit btn = message puis affichage final confirmation
+formSubmitBtn.addEventListener('click', function(e) {
 
-// Si tous les champs bien remplis > Submit btn = success message puis success screen
-formSubmitBtn.addEventListener('click', ($event) => {
-  $event.preventDefault();
+  e.preventDefault(); /* par défaut le formulaire se ferme tout de suite après le clic */
 
   if(validateFirstName()
   && validateLastName()
@@ -234,18 +228,15 @@ formSubmitBtn.addEventListener('click', ($event) => {
   && validateLocation()
   && validateCheckbox1())
   {
-    submitSuccessMessage.style.display = "block";
-    setTimeout(showSuccessScreen, 2000); /* délai affichage success screen */
-  }
-
-  else {
-    alert('Veuillez saisir les champs avant de valider. ')
+    submitSendingMessage.style.display = "block";
+    setTimeout(showConfirmationScreen, 2000); /* délai affichage final confirmation */
   }
 });
 
-// Ecran de confirmation : success screen
-function showSuccessScreen()
+// Ecran de confirmation 
+function showConfirmationScreen()
 {
   formScreen.style.display = "none"; /* masque le formulaire une fois validé */
-  successScreen.style.display = "block";
+  confirmationScreen.style.display = "inline-flex";
+
 }
