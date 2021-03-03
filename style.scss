@@ -530,17 +530,11 @@ input {
 }
 
 .hero-img img {
-    width: 100%;
-    height: auto;
-    display: none;
-}
-
-.hero-img {
-    width: 65%;
-    background-image: url("/images/bg_img.png");
-    background-size: cover;
+    width: auto;
+    height: 100%;
     border-bottom-right-radius: 15px;
     border-top-right-radius: 15px;
+
 }
 
 .hero-headline {
