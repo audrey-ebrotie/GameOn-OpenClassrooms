@@ -1,11 +1,13 @@
 function editNav() {
-  var x = document.getElementById("myTopnav");
-  if (x.className === "topnav") {
-    x.className += "responsive";
+  let x = document.getElementById("navlinks");
+  if (x.style.display === "inline-flex") {
+    x.style.display = "none";
   } else {
-    x.className = "topnav";
+    x.style.display = "inline-flex";
   }
 }
+
+
 
 // DOM Elements (variables)
 const modalbg = document.querySelector(".bground");
