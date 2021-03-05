@@ -1,11 +1,22 @@
-function editNav() {
-  let x = document.getElementById("navlinks");
-  if (x.style.display === "inline-flex") {
-    x.style.display = "none";
-  } else {
-    x.style.display = "inline-flex";
+const x = document.getElementById("navlinks");
+const y = document.getElementById("navlinks-mobile");
+
+
+function menuSwitch() {
+  if (x.style.display == "inline-flex") {
+    y.style.display = "none";
+  } else if (x.style.display = "none") {
+    y.style.display = "inline-flex";
+  } else if (y.style.display = "inline-flex") {
+    y.style.display = "none";
+  } 
+    else {
+    y.style.display = "none";
   }
+
 }
+
+
 
 
 

@@ -58,6 +58,14 @@ nav {
     justify-content: flex-end;
 }
 
+#navlinks {
+    display: inline-flex;
+}
+
+#navlinks-mobile {
+    display: none;
+}
+
 .topnav a {
     display: inline-flex;
     flex-direction: row;
@@ -467,8 +475,17 @@ input {
     overflow: hidden;
 }
 
+.hero-image {
+    width: 100%;
+    height: 100%;
+    border-bottom-right-radius: 15px;
+    border-top-right-radius: 15px;
+}
+
 .hero-image img {
     width: 100%;
+    height: 100%;
+    object-fit: cover;
     border-bottom-right-radius: 15px;
     border-top-right-radius: 15px;
 }
@@ -548,8 +565,11 @@ footer {
     }
 
     /* Hide the links inside the navigation menu (except for logo) */
-    .topnav #navlinks {
+    #navlinks {
         display: none;
+    }
+
+    #navlinks-mobile {
         padding-top: 4rem;
         flex-direction: column;
         animation: apparition-menuHamb 0.8s ease-out;
@@ -573,11 +593,13 @@ footer {
         top: 0;
         font-size: 1.5rem;
         cursor: pointer;
+        color: rgb(207, 18, 18);
+        background-color: rgba(255, 255, 255, 0.5);
     }
 
     /* Style the active link (or home/logo) */
     .active {
-        color: rgb(207, 18, 18);
+        color: rgb(255, 255, 255);
     }
 
     .header-logo {

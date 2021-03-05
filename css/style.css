@@ -74,6 +74,16 @@ nav {
           justify-content: flex-end;
 }
 
+#navlinks {
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+}
+
+#navlinks-mobile {
+  display: none;
+}
+
 .topnav a {
   display: -webkit-inline-box;
   display: -ms-inline-flexbox;
@@ -500,8 +510,18 @@ input {
   overflow: hidden;
 }
 
+.hero-image {
+  width: 100%;
+  height: 100%;
+  border-bottom-right-radius: 15px;
+  border-top-right-radius: 15px;
+}
+
 .hero-image img {
   width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
   border-bottom-right-radius: 15px;
   border-top-right-radius: 15px;
 }
@@ -598,8 +618,10 @@ footer {
     }
   }
   /* Hide the links inside the navigation menu (except for logo) */
-  .topnav #navlinks {
+  #navlinks {
     display: none;
+  }
+  #navlinks-mobile {
     padding-top: 4rem;
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
@@ -626,10 +648,12 @@ footer {
     top: 0;
     font-size: 1.5rem;
     cursor: pointer;
+    color: #cf1212;
+    background-color: rgba(255, 255, 255, 0.5);
   }
   /* Style the active link (or home/logo) */
   .active {
-    color: #cf1212;
+    color: white;
   }
   .header-logo {
     width: 20%;
