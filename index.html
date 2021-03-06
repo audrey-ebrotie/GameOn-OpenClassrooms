@@ -12,37 +12,29 @@
 
 <body>
   <header>
-    <div class="topnav" id="myTopnav">
-      <div class="header-logo">
-        <img alt="logo" src="images/Logo.png" width="auto" height="auto" />
-      </div>
-
-
+    <div class="nav-container">
       <nav>
-        <div id="main-navbar">
+        <img alt="logo" src="images/Logo.png" class="logo" />
 
-          <div id="navlinks">
-            <a href="#" class="active"><span>Détails de l'évènement</span></a>
-            <a href="#"><span>À propos</span></a>
-            <a href="#"><span>Contact</span></a>
-            <a href="#"><span>Évènements passés</span></a>
-          </div>
+        <button class="hamburger" id="hamburger">
+          <i class="fa fa-bars"></i>
+        </button>
+        <ul class="nav-ul" id="nav-ul">
+          <li><a href="#" class="active">Détails de l'évènement<div class="underline"></div></a>
 
-          <div id="navlinks-mobile">
-            <a href="#" class="active"><span>Détails de l'évènement</span></a>
-            <a href="#"><span>À propos</span></a>
-            <a href="#"><span>Contact</span></a>
-            <a href="#"><span>Évènements passés</span></a>
-          </div>
+          </li>
+          <li><a href="#">À propos<div class="underline"></div></a>
 
-          <a href="javascript:void(0);" class="icon" onclick="menuSwitch()">
-            <i class="fa fa-bars"></i>
-          </a>
+          </li>
+          <li><a href="#">Contact<div class="underline"></div></a>
 
-        </div>
+          </li>
+          <li><a href="#">Évènements passés<div class="underline"></div></a>
+
+          </li>
+        </ul>
+      </nav>
     </div>
-    </nav>
-
   </header>
 
   <main>

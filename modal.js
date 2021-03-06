@@ -1,24 +1,10 @@
-const x = document.getElementById("navlinks");
-const y = document.getElementById("navlinks-mobile");
+// Toggle menu
+const hamburger = document.getElementById('hamburger');
+const navUl = document.getElementById('nav-ul');
 
-
-function menuSwitch() {
-  if (x.style.display == "inline-flex") {
-    y.style.display = "none";
-  } else if (x.style.display = "none") {
-    y.style.display = "inline-flex";
-  } else if (y.style.display = "inline-flex") {
-    y.style.display = "none";
-  } 
-    else {
-    y.style.display = "none";
-  }
-
-}
-
-
-
-
+hamburger.addEventListener('click', () => {
+  navUl.classList.toggle('show');
+});
 
 // DOM Elements (variables)
 const modalbg = document.querySelector(".bground");

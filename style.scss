@@ -31,79 +31,74 @@ p {
     padding: 0.5vw;
 }
 
-.topnav {
+.nav-container {
     width: 100%;
-    margin: 3rem auto 4rem auto;
-    padding-bottom: 1rem;
-    display: flex;
-    flex-direction: row;
-    overflow: hidden;
-    position: relative;
-}
-
-.header-logo {
-    width: 20%;
-    display: flex;
-    align-items: center;
-}
-
-#main-navbar {
-    display: flex;
-    justify-content: flex-end;
 }
 
 nav {
-    width: 80%;
     display: flex;
-    justify-content: flex-end;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    padding: 2rem 0 2rem 0;
 }
 
-#navlinks {
-    display: inline-flex;
+.nav-ul {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    list-style-type: none;
+    padding: 0;
 }
 
-#navlinks-mobile {
-    display: none;
+.nav-ul li {
+    margin-right: 2px;
 }
 
-.topnav a {
-    display: inline-flex;
-    flex-direction: row;
+.nav-ul li a {
+    display: inline-block;
     color: #000000;
-    text-align: right;
-    padding: 18px 15px;
+    padding: 15px 15px 10px 15px;
     text-decoration: none;
     font-size: 16px;
     font-family: Roboto, sans-serif;
+    text-decoration: none;
 }
 
-.topnav a:hover {
+.nav-ul li a:hover {
     background-color: #ff0000;
     color: #ffffff;
     border-radius: 10px;
 }
 
-.topnav a.active {
+.nav-ul li a.active {
     background-color: #ff0000;
     color: #ffffff;
     border-radius: 10px;
 }
 
-.topnav .icon {
+.nav-ul li a:hover .underline {
+    border-bottom: solid 2px rgb(255, 255, 255);
+    padding-top: 5px;
+}
+
+.underline {
+    border-bottom: solid 2px transparent;
+    padding-top: 5px;
+}
+
+.hamburger {
+    background-color: transparent;
+    border: none;
+    color: #ff0000;
+    font-size: 25px;
+    cursor: pointer;
     display: none;
 }
 
-// .modal-btn {
-//     font-size: 145%;
-//     background: #fe142f;
-//     display: flex;
-//     margin: auto;
-//     padding: 2em;
-//     color: #fff;
-//     padding: 0.75rem 2.5rem;
-//     border-radius: 1rem;
-//     cursor: pointer;
-// }
+.hamburger:focus {
+    outline: none;
+}
 
 .modal-btn:hover {
     background: #3876ac;
@@ -543,13 +538,22 @@ footer {
     }
 }
 
-@media screen and (max-width: 900px) {
+@media screen and (max-width: 920px) {
 
-    /* Style the navigation menu */
-    .topnav {
-        overflow: hidden;
-        position: relative;
-        margin-bottom: 1rem;
+    .hamburger {
+        display: block;
+    }
+
+    .nav-ul {
+        display: none;
+        width: 100%;
+        flex-direction: column;
+    }
+
+    .nav-ul.show {
+        display: flex;
+        align-items: flex-end;
+        animation: apparition-menuHamb 0.8s both;
     }
 
     @keyframes apparition-menuHamb {
@@ -564,53 +568,20 @@ footer {
         }
     }
 
-    /* Hide the links inside the navigation menu (except for logo) */
-    #navlinks {
-        display: none;
-    }
-
-    #navlinks-mobile {
-        padding-top: 4rem;
-        flex-direction: column;
-        animation: apparition-menuHamb 0.8s ease-out;
-        animation-fill-mode: both;
-    }
-
-    /* Style navigation menu links */
-    .topnav a {
-        color: rgb(0, 0, 0);
-        padding: 14px 16px;
-        text-decoration: none;
-        font-size: 17px;
-        display: block;
-    }
-
-    /* Style the hamburger menu */
-    .topnav a.icon {
-        display: block;
-        position: absolute;
-        right: 0;
-        top: 0;
-        font-size: 1.5rem;
-        cursor: pointer;
-        color: rgb(207, 18, 18);
-        background-color: rgba(255, 255, 255, 0.5);
-    }
-
-    /* Style the active link (or home/logo) */
-    .active {
-        color: rgb(255, 255, 255);
-    }
-
-    .header-logo {
-        width: 20%;
-        display: flex;
-        align-items: flex-start;
+    .nav-ul li {
+        margin-right: 0;
+        margin-top: 2px;
     }
 
 }
 
 @media screen and (max-width: 800px) {
+
+    nav {
+        width: 90%;
+        margin: auto;
+    }
+
     main {
         display: flex;
         justify-content: center;
