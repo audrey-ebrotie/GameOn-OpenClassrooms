@@ -17,7 +17,12 @@ const formLastName = document.getElementById('last-name');
 const formEmail = document.getElementById('email');
 const formBirthdate = document.getElementById('birthdate');
 const formQuantity = document.getElementById('quantity');
-const formLocation = document.getElementsByName('location');
+const formLocation1 = document.getElementById('location1');
+const formLocation2 = document.getElementById('location2');
+const formLocation3 = document.getElementById('location3');
+const formLocation4 = document.getElementById('location4');
+const formLocation5 = document.getElementById('location5');
+const formLocation6 = document.getElementById('location6');
 const formCheckbox1 = document.getElementById('checkbox1');
 const formCheckbox2 = document.getElementById('checkbox2');
 
@@ -60,7 +65,12 @@ function closeModal() {
   formEmail.value = " ";
   formBirthdate.value = " ";
   formQuantity.value = " ";
-  formLocation.checked = false; /* ne décoche pas les cases à la fermeture, pk? */
+  location1.checked = false;
+  location2.checked = false; 
+  location3.checked = false; 
+  location4.checked = false; 
+  location5.checked = false; 
+  location6.checked = false; 
   formCheckbox1.checked = false;
   formCheckbox2.checked = false;
 
@@ -163,27 +173,27 @@ function validateQuantity(){
 function validateLocation(){
   let boxChecked = false;
   
-  if(document.getElementById("location1").checked){
+  if(formLocation1.checked){
     boxChecked = true;
   }
 
-  else if(document.getElementById("location2").checked){
+  else if(formLocation2.checked){
     boxChecked = true;
   }
 
-  else if(document.getElementById("location3").checked){
+  else if(formLocation3.checked){
     boxChecked = true;
   }
 
-  else if(document.getElementById("location4").checked){
+  else if(formLocation4.checked){
     boxChecked = true;
   }
 
-  else if(document.getElementById("location5").checked){
+  else if(formLocation5.checked){
     boxChecked = true;
   }
 
-  else if(document.getElementById("location6").checked){
+  else if(formLocation6.checked){
     boxChecked = true;
   }
 

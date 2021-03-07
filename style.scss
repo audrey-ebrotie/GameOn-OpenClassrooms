@@ -10,6 +10,7 @@ body,
 html {
     width: 100%;
     margin: 0;
+    padding: 0;
     font-family: var(--font-default);
 }
 
@@ -106,7 +107,7 @@ nav {
 
 /* Modal form */
 
-.button {
+button {
     background: #fe142f;
     margin-top: 0.5em;
     padding: 1em;
@@ -116,7 +117,7 @@ nav {
     font-size: 16px;
 }
 
-.button:hover {
+button:hover {
     background: #3876ac;
 }
 
@@ -180,6 +181,7 @@ label {
     font-weight: normal;
     display: inline-block;
     margin-bottom: 11px;
+    margin-top: 6px;
 }
 
 input {
@@ -208,7 +210,7 @@ input {
 }
 
 .errorMessage {
-    font-size: 0.8em;
+    font-size: 1em;
     color: #db2f40;
     display: none;
     margin-top: 7px;
@@ -237,42 +239,50 @@ input {
     border: 2px solid #db2f40;
 }
 
+.formDataLocations {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    width: 100%;
+}
+
+.divLocation {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    margin-right: 17px;
+}
+
 .checkbox-label,
 .checkbox2-label {
-    position: relative;
-    margin-left: 36px;
-    font-size: 12px;
+    font-size: 13px;
     font-weight: normal;
+    display: flex;
+    align-items: center;
 }
 
 .checkbox-label .checkbox-icon,
 .checkbox2-label .checkbox-icon {
-    display: block;
-    width: 20px;
-    height: 20px;
+    display: inline-flex;
+    justify-content: center;
+    width: 17px;
+    height: 17px;
     border: 2px solid #279e7a;
     border-radius: 50%;
-    text-indent: 29px;
-    white-space: nowrap;
-    position: absolute;
-    left: -30px;
-    top: -1px;
-    transition: 0.3s;
+    margin-right: 8px;
 }
 
 .checkbox-label .checkbox-icon::after,
 .checkbox2-label .checkbox-icon::after {
     content: "";
+    display: inline-flex;
+    justify-content: center;
+    align-self: center;
     width: 13px;
     height: 13px;
     background-color: #279e7a;
     border-radius: 50%;
-    text-indent: 29px;
-    white-space: nowrap;
-    position: absolute;
-    left: 50%;
-    top: 50%;
-    transform: translate(-50%, -50%);
     transition: 0.3s;
     opacity: 0;
 }
@@ -294,6 +304,10 @@ input {
     border-radius: 4px;
     border: 0;
     background: #c4c4c4;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    padding-bottom: 2px;
 }
 
 .checkbox2-label .checkbox-icon::after {
@@ -305,8 +319,6 @@ input {
     border-bottom-color: #fff;
     border-left-color: #fff;
     transform: rotate(-55deg);
-    left: 21%;
-    top: 19%;
 }
 
 .close {
@@ -339,12 +351,12 @@ input {
 }
 
 .btn-submit {
+    width: 45%;
     background: #fe142f;
     display: block;
     margin: 20px auto;
     border-radius: 7px;
     font-size: 1rem;
-    padding: 12px 82px;
     color: #fff;
     cursor: pointer;
     border: 0;
@@ -578,7 +590,7 @@ footer {
 @media screen and (max-width: 800px) {
 
     nav {
-        width: 90%;
+        width: 100%;
         margin: auto;
     }
 
@@ -586,6 +598,7 @@ footer {
         display: flex;
         justify-content: center;
         flex-direction: column;
+        width: 90%;
     }
 
     .hero-section {
@@ -593,7 +606,7 @@ footer {
         justify-content: center;
         flex-direction: column;
         box-shadow: unset;
-        width: 90%;
+        width: 100%;
         margin: auto;
     }
 
@@ -641,6 +654,47 @@ footer {
 
     .btn-signup {
         font-size: 1.8rem;
+    }
+
+    .content {
+        margin: 0;
+        max-width: 100%;
+        height: 100%;
+        border-radius: 0;
+    }
+
+    .text-control {
+        margin: 5px 0 10px 0;
+        padding: 0;
+        width: 100%;
+        border-radius: 8px;
+        font-size: 25px;
+        height: 70px;
+    }
+
+    label {
+        font-size: 20px;
+    }
+
+    .checkbox-label,
+    .checkbox2-label {
+        font-size: 20px;
+    }
+
+    .checkbox-label .checkbox-icon,
+    .checkbox2-label .checkbox-icon {
+        width: 25px;
+        height: 25px;
+    }
+
+    .btn-submit {
+        width: 35%;
+        font-size: 1.2rem;
+    }
+
+    .close {
+        right: 25px;
+        top: 20px;
     }
 
     .copyrights {
