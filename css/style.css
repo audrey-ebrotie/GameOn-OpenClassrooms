@@ -104,9 +104,11 @@ nav {
   background-color: transparent;
   border: none;
   color: #ff0000;
-  font-size: 25px;
+  font-size: 30px;
   cursor: pointer;
+  padding: 5px;
   display: none;
+  margin: 0;
 }
 
 .hamburger:focus {
@@ -126,10 +128,6 @@ button {
   border-radius: 15px;
   cursor: pointer;
   font-size: 16px;
-}
-
-button:hover {
-  background: #3876ac;
 }
 
 .smFont {
@@ -162,11 +160,6 @@ button:hover {
   position: relative;
   color: #fff;
   padding-top: 10px;
-}
-
-.modal-body {
-  padding: 15px 8%;
-  margin: 15px auto;
 }
 
 .modal-confirmation {
@@ -205,14 +198,15 @@ label {
 }
 
 input {
-  padding: 8px;
   border: 0.8px solid #ccc;
   outline: none;
+  background-color: white;
+  width: 100%;
+  margin: auto;
 }
 
 .text-control {
-  margin: 0;
-  padding: 8px;
+  margin: auto;
   width: 100%;
   border-radius: 8px;
   font-size: 20px;
@@ -236,6 +230,11 @@ input {
   margin-top: 7px;
   margin-bottom: 7px;
   text-align: left;
+}
+
+.formData {
+  margin: auto;
+  width: 85%;
 }
 
 .formData[data-error]::after {
@@ -268,8 +267,13 @@ input {
   -webkit-box-direction: normal;
       -ms-flex-direction: row;
           flex-direction: row;
+  margin: auto;
+  width: 85%;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
+}
+
+.villes {
   width: 100%;
 }
 
@@ -576,7 +580,7 @@ input {
   font-weight: normal;
   margin-top: 57px;
   padding: 0;
-  font-size: 1.6rem;
+  font-size: 1.4rem;
 }
 
 footer {
@@ -675,6 +679,9 @@ footer {
     margin-right: 0;
     margin-top: 2px;
   }
+  .nav-ul li a {
+    font-size: 20px;
+  }
 }
 
 @media screen and (max-width: 800px) {
@@ -718,7 +725,7 @@ footer {
     padding: 0;
   }
   .hero-headline {
-    font-size: 4.4rem;
+    font-size: 4.7rem;
     white-space: normal;
     display: -webkit-box;
     display: -ms-flexbox;
@@ -729,7 +736,7 @@ footer {
   .hero-text {
     width: 100%;
     margin: 20px 0 40px 0;
-    font-size: 1.6rem;
+    font-size: 1.5rem;
   }
   .hero-imageContent {
     width: 100%;
@@ -762,12 +769,9 @@ footer {
     border-radius: 0;
   }
   .text-control {
-    margin: 5px 0 10px 0;
-    padding: 0;
-    width: 100%;
     border-radius: 8px;
     font-size: 25px;
-    height: 70px;
+    height: 60px;
   }
   label {
     font-size: 20px;
@@ -794,6 +798,77 @@ footer {
     text-align: center;
     width: 100%;
     margin-left: 0;
+  }
+}
+
+@media screen and (max-width: 570px) {
+  .logo {
+    width: 50%;
+  }
+  .hero-headline {
+    font-size: 3.3rem;
+  }
+  .hero-text {
+    font-size: 1.3rem;
+  }
+  .btn-signup {
+    font-size: 1.3rem;
+  }
+  .text-control {
+    font-size: 18px;
+    height: 50px;
+  }
+  label {
+    font-size: 18px;
+  }
+  .checkbox-label,
+  .checkbox2-label {
+    font-size: 18px;
+  }
+  .checkbox-label .checkbox-icon,
+  .checkbox2-label .checkbox-icon {
+    width: 20px;
+    height: 20px;
+  }
+  .btn-submit {
+    width: 50%;
+    font-size: 1.2rem;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .hamburger {
+    font-size: 20px;
+  }
+  .hero-headline {
+    font-size: 2.3rem;
+  }
+  .hero-text {
+    font-size: 1rem;
+  }
+  .btn-signup {
+    font-size: 0.7rem;
+  }
+  .copyrights {
+    font-size: 0.7rem;
+  }
+}
+
+@media screen and (max-width: 280px) {
+  .hamburger {
+    font-size: 15px;
+  }
+  .hero-headline {
+    font-size: 1.8rem;
+  }
+  .hero-text {
+    font-size: 0.7rem;
+  }
+  .btn-signup {
+    font-size: 0.5rem;
+  }
+  .copyrights {
+    font-size: 0.4rem;
   }
 }
 /*# sourceMappingURL=style.css.map */
