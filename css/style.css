@@ -75,7 +75,6 @@ nav {
   text-decoration: none;
   font-size: 16px;
   font-family: Roboto, sans-serif;
-  text-decoration: none;
 }
 
 .nav-ul li a:hover {
@@ -162,11 +161,27 @@ button {
   padding-top: 10px;
 }
 
+form {
+  margin-top: 3%;
+  margin-bottom: 3%;
+  height: 100%;
+}
+
+#modalForm {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 100%;
+}
+
 .modal-confirmation {
   font-size: 2.5rem;
   font-weight: 200;
   width: 90%;
-  height: 700px;
+  height: 800px;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
@@ -209,8 +224,8 @@ input {
   margin: auto;
   width: 100%;
   border-radius: 8px;
-  font-size: 20px;
-  height: 48px;
+  font-size: 17px;
+  height: 60px;
 }
 
 .submitSending {
@@ -224,12 +239,16 @@ input {
 }
 
 .errorMessage {
-  font-size: 1em;
+  font-size: 17px;
   color: #db2f40;
   display: none;
-  margin-top: 7px;
-  margin-bottom: 7px;
+  margin: 10px auto 10px auto;
   text-align: left;
+  width: 85%;
+}
+
+.errorBorder {
+  border: 2px solid #db2f40;
 }
 
 .formData {
@@ -251,12 +270,8 @@ input {
   transition: 0.3s;
 }
 
-.formData[data-error-visible="true"]::after {
+.formData[data-error="true"]::after {
   opacity: 1;
-}
-
-.formData[data-error-visible="true"] .text-control {
-  border: 2px solid #db2f40;
 }
 
 .formDataLocations {
@@ -273,7 +288,7 @@ input {
       flex-wrap: wrap;
 }
 
-.villes {
+.label-villes {
   width: 100%;
 }
 
@@ -291,12 +306,12 @@ input {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  margin-right: 17px;
+  margin-right: 10px;
 }
 
 .checkbox-label,
 .checkbox2-label {
-  font-size: 13px;
+  font-size: 15px;
   font-weight: normal;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -318,7 +333,7 @@ input {
   height: 17px;
   border: 2px solid #279e7a;
   border-radius: 50%;
-  margin-right: 8px;
+  margin-right: 5px;
 }
 
 .checkbox-label .checkbox-icon::after,
@@ -768,10 +783,14 @@ footer {
     height: 100%;
     border-radius: 0;
   }
+  .modal-confirmation {
+    font-size: 2.5rem;
+    height: 0px;
+  }
   .text-control {
     border-radius: 8px;
     font-size: 25px;
-    height: 60px;
+    height: 80px;
   }
   label {
     font-size: 20px;
@@ -785,6 +804,9 @@ footer {
     width: 25px;
     height: 25px;
   }
+  .errorMessage {
+    font-size: 20px;
+  }
   .btn-submit {
     width: 35%;
     font-size: 1.2rem;
@@ -794,7 +816,6 @@ footer {
     top: 20px;
   }
   .copyrights {
-    margin-top: 60px;
     text-align: center;
     width: 100%;
     margin-left: 0;
@@ -804,6 +825,9 @@ footer {
 @media screen and (max-width: 570px) {
   .logo {
     width: 50%;
+  }
+  .nav-ul li a {
+    font-size: 16px;
   }
   .hero-headline {
     font-size: 3.3rem;
@@ -815,20 +839,19 @@ footer {
     font-size: 1.3rem;
   }
   .text-control {
-    font-size: 18px;
-    height: 50px;
+    font-size: 17px;
   }
   label {
-    font-size: 18px;
+    font-size: 17px;
   }
   .checkbox-label,
   .checkbox2-label {
-    font-size: 18px;
+    font-size: 17px;
   }
   .checkbox-label .checkbox-icon,
   .checkbox2-label .checkbox-icon {
-    width: 20px;
-    height: 20px;
+    width: 16px;
+    height: 16px;
   }
   .btn-submit {
     width: 50%;
@@ -840,6 +863,9 @@ footer {
   .hamburger {
     font-size: 20px;
   }
+  .nav-ul li a {
+    font-size: 12px;
+  }
   .hero-headline {
     font-size: 2.3rem;
   }
@@ -848,6 +874,14 @@ footer {
   }
   .btn-signup {
     font-size: 0.7rem;
+  }
+  .text-control {
+    font-size: 20px;
+    height: 40px;
+  }
+  .modal-confirmation {
+    font-size: 1.5rem;
+    height: 0px;
   }
   .copyrights {
     font-size: 0.7rem;
@@ -866,6 +900,22 @@ footer {
   }
   .btn-signup {
     font-size: 0.5rem;
+  }
+  label {
+    font-size: 12px;
+  }
+  .checkbox-label,
+  .checkbox2-label {
+    font-size: 12px;
+  }
+  .checkbox-label .checkbox-icon,
+  .checkbox2-label .checkbox-icon {
+    width: 10px;
+    height: 10px;
+  }
+  .btn-submit {
+    width: 50%;
+    font-size: 0.8rem;
   }
   .copyrights {
     font-size: 0.4rem;

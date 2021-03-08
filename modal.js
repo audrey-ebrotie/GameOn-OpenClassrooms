@@ -65,21 +65,31 @@ function closeModal() {
   formEmail.value = " ";
   formBirthdate.value = " ";
   formQuantity.value = " ";
-  location1.checked = false;
-  location2.checked = false; 
-  location3.checked = false; 
-  location4.checked = false; 
-  location5.checked = false; 
-  location6.checked = false; 
+  formLocation1.checked = false;
+  formLocation2.checked = false; 
+  formLocation3.checked = false; 
+  formLocation4.checked = false; 
+  formLocation5.checked = false; 
+  formLocation6.checked = false; 
   formCheckbox1.checked = false;
   formCheckbox2.checked = false;
 
-    // Retire les messages d'erreur après fermeture modal
-  firstNameErrorMessage.style.display = "none";  
-  lastNameErrorMessage.style.display = "none";  
+    // Retire les messages et bordures d'erreur après fermeture modal
+  firstNameErrorMessage.style.display = "none"; 
+  formFirstName.style.border = "none"; 
+  
+  lastNameErrorMessage.style.display = "none"; 
+  formLastName.style.border = "none"; 
+
   emailErrorMessage.style.display = "none";  
+  formEmail.style.border = "none";  
+
   birthdateErrorMessage.style.display = "none";  
+  formBirthdate.style.border = "none";  
+
   quantityErrorMessage.style.display = "none";  
+  formQuantity.style.border = "none"; 
+
   locationErrorMessage.style.display = "none";  
   checkbox1ErrorMessage.style.display = "none";  
   submitSendingMessage.style.display = "none"; 
@@ -90,18 +100,20 @@ function closeModal() {
 }
 
 
-// Vérifie si la saisie est valide, sinon message d'erreur
+// Vérifie si la saisie est valide, sinon message d'erreur + bordure rouge
 
 // <!-- ******************************** Prénom ***************************** -->
 function validateFirstName(){
   if(formFirstName.value.length <= 1)
   {
     firstNameErrorMessage.textContent = "Veuillez entrer 2 caractères ou plus pour le champ du prénom.";
-    firstNameErrorMessage.style.display = "block";    
+    firstNameErrorMessage.style.display = "block"; 
+    formFirstName.style.border="2px solid #db2f40";
     return false;
   }
   else{
     firstNameErrorMessage.style.display = "none"; 
+    formFirstName.style.border = "2px solid #279e7a";
     return true;   
   }
 }
@@ -112,10 +124,12 @@ function validateLastName(){
   {
     lastNameErrorMessage.textContent = "Veuillez entrer 2 caractères ou plus pour le champ du nom.";
     lastNameErrorMessage.style.display = "block";  
+    formLastName.style.border="2px solid #db2f40";
     return false;  
   }
   else{
-    lastNameErrorMessage.style.display = "none";   
+    lastNameErrorMessage.style.display = "none";
+    formLastName.style.border="2px solid #279e7a";  
     return true; 
   }
 }
@@ -132,11 +146,13 @@ let email = document.getElementById("email").value;
   if(checkEmail(email))
   {
     emailErrorMessage.style.display = "none";
+    formEmail.style.border="2px solid #279e7a";
     return true;
      
   } else {
     emailErrorMessage.textContent = "Vous devez saisir une adresse mail valide. ";
     emailErrorMessage.style.display = "block";  
+    formEmail.style.border="2px solid #db2f40";
     return false;  
   }
 }
@@ -147,10 +163,12 @@ function validateBirthdate(){
   {
     birthdateErrorMessage.textContent = "Vous devez entrer votre date de naissance.";
     birthdateErrorMessage.style.display = "block";    
+    formBirthdate.style.border="2px solid #db2f40";
     return false;
   }
   else{
-    birthdateErrorMessage.style.display = "none";    
+    birthdateErrorMessage.style.display = "none";   
+    formBirthdate.style.border="2px solid #279e7a"; 
     return true;
   }
 }
@@ -160,11 +178,13 @@ function validateQuantity(){
   if(formQuantity.value < 0 || formQuantity.value === "")
   {
     quantityErrorMessage.textContent = "Vous devez saisir un chiffre ou nombre valide. ";
-    quantityErrorMessage.style.display = "block";  
+    quantityErrorMessage.style.display = "block"; 
+    formQuantity.style.border="2px solid #db2f40"; 
     return false;  
   }
   else{
     quantityErrorMessage.style.display = "none";  
+    formQuantity.style.border="2px solid #279e7a"; 
     return true;  
   }
 }
