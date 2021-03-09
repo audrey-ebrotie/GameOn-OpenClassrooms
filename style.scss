@@ -5,13 +5,13 @@
 }
 
 /* Landing Page */
-
 body,
 html {
-    width: 100%;
-    margin: 0;
-    padding: 0;
     font-family: var(--font-default);
+    margin: 0;
+    min-height: 100%;
+    padding: 0;
+    width: 100%;
 }
 
 header {
@@ -102,12 +102,7 @@ nav {
     outline: none;
 }
 
-.modal-btn:hover {
-    background: #3876ac;
-}
-
 /* Modal form */
-
 button {
     background: #fe142f;
     margin-top: 0.5em;
@@ -164,7 +159,7 @@ form {
     font-size: 2.5rem;
     font-weight: 200;
     width: 90%;
-    height: 800px;
+    height: 100%;
     flex-direction: column;
     text-align: center;
     align-items: center;
@@ -198,10 +193,11 @@ input {
 
 .text-control {
     margin: auto;
-    width: 100%;
+    width: 92%;
     border-radius: 8px;
     font-size: 17px;
     height: 60px;
+    padding: 4%;
 }
 
 .submitSending {
@@ -552,9 +548,7 @@ footer {
     }
 }
 
-
 // ********************************** RESPONSIVE **********************************
-
 @media screen and (max-width: 1024px) {
     .hero-headline {
         font-size: 3rem;
@@ -565,40 +559,40 @@ footer {
     }
 
     form {
-        max-width: 400px;
-        height: 650px;
+        max-width: 350px;
+        height: 700px;
     }
 
     .content {
-        max-width: 400px;
+        max-width: 350px;
+        height: 700px;
     }
 
     .modal-confirmation {
-        max-width: 400px;
-        height: 650px;
+        max-width: 350px;
+        height: 700px;
     }
 
     .text-control {
-        font-size: 15px;
-        height: 30px;
+        font-size: 13px;
+        height: 22px;
     }
 
     label {
-        font-size: 15px;
+        font-size: 13px;
     }
 
     .checkbox-label,
     .checkbox2-label {
-        font-size: 15px;
+        font-size: 13px;
     }
 
     .errorMessage {
-        font-size: 15px;
+        font-size: 13px;
     }
 }
 
 @media screen and (max-width: 920px) {
-
     .hamburger {
         display: block;
     }
@@ -635,11 +629,9 @@ footer {
     .nav-ul li a {
         font-size: 20px;
     }
-
 }
 
 @media screen and (max-width: 800px) {
-
     nav {
         width: 100%;
         margin: auto;
@@ -707,6 +699,10 @@ footer {
         font-size: 1.8rem;
     }
 
+    .bground {
+        background-color: transparent;
+    }
+
     form {
         max-width: 100%;
         height: 100%;
@@ -714,8 +710,8 @@ footer {
 
     .content {
         max-width: 100%;
-        object-fit: cover;
-        margin: 0;
+        height: 100%;
+        margin: 120px 0 0 0;
         border-radius: 0;
     }
 
@@ -726,8 +722,8 @@ footer {
 
     .text-control {
         border-radius: 8px;
-        font-size: 25px;
-        height: 100px;
+        font-size: 20px;
+        height: 40px;
     }
 
     label {
@@ -751,8 +747,7 @@ footer {
 
     .btn-submit {
         width: 35%;
-        font-size: 1.2rem;
-        margin: 35px auto;
+        font-size: 20px;
     }
 
     .close {
@@ -768,7 +763,6 @@ footer {
 }
 
 @media screen and (max-width: 570px) {
-
     .logo {
         width: 50%;
     }
@@ -790,16 +784,20 @@ footer {
     }
 
     .text-control {
-        font-size: 18px;
+        font-size: 22px;
     }
 
     label {
-        font-size: 18px;
+        font-size: 22px;
     }
 
     .checkbox-label,
     .checkbox2-label {
-        font-size: 18px;
+        font-size: 22px;
+    }
+
+    .errorMessage {
+        font-size: 22px;
     }
 
     .checkbox-label .checkbox-icon,
@@ -810,13 +808,11 @@ footer {
 
     .btn-submit {
         width: 50%;
-        font-size: 1.2rem;
+        font-size: 22px;
     }
-
 }
 
 @media screen and (max-width: 400px) {
-
     .hamburger {
         font-size: 20px;
     }
@@ -837,8 +833,25 @@ footer {
         font-size: 0.7rem;
     }
 
+    .content {
+        margin: 100px 0 0 0;
+    }
+
     .text-control {
-        height: 70px;
+        font-size: 18px;
+    }
+
+    label {
+        font-size: 18px;
+    }
+
+    .checkbox-label,
+    .checkbox2-label {
+        font-size: 18px;
+    }
+
+    .errorMessage {
+        font-size: 18px;
     }
 
     .checkbox-label .checkbox-icon,
@@ -848,7 +861,8 @@ footer {
     }
 
     .btn-submit {
-        margin-bottom: 40%;
+        width: 50%;
+        font-size: 18px;
     }
 
     .modal-confirmation {
@@ -858,11 +872,9 @@ footer {
     .copyrights {
         font-size: 0.7rem;
     }
-
 }
 
 @media screen and (max-width: 280px) {
-
     .hamburger {
         font-size: 15px;
     }
@@ -879,12 +891,20 @@ footer {
         font-size: 0.5rem;
     }
 
+    .content {
+        margin: 90px 0 0 0;
+    }
+
     label {
         font-size: 12px;
     }
 
     .checkbox-label,
     .checkbox2-label {
+        font-size: 12px;
+    }
+
+    .errorMessage {
         font-size: 12px;
     }
 
@@ -901,8 +921,5 @@ footer {
 
     .copyrights {
         font-size: 0.4rem;
-
-
     }
-
 }
