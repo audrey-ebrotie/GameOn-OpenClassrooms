@@ -1,3 +1,6 @@
+$green : #279e7a;
+$red : #fe142f;
+
 :root {
     --font-default: "DM Sans", Arial, Helvetica, sans-serif;
     --font-slab: var(--font-default);
@@ -66,13 +69,13 @@ nav {
 }
 
 .nav-ul li a:hover {
-    background-color: #ff0000;
+    background-color: $red;
     color: #ffffff;
     border-radius: 10px;
 }
 
 .nav-ul li a.active {
-    background-color: #ff0000;
+    background-color: $red;
     color: #ffffff;
     border-radius: 10px;
 }
@@ -90,7 +93,7 @@ nav {
 .hamburger {
     background-color: transparent;
     border: none;
-    color: #ff0000;
+    color: $red;
     font-size: 30px;
     cursor: pointer;
     padding: 5px;
@@ -104,7 +107,7 @@ nav {
 
 /* Modal form */
 button {
-    background: #fe142f;
+    background: $red;
     margin-top: 0.5em;
     padding: 1em;
     color: #fff;
@@ -166,40 +169,11 @@ form {
     width: 100%;
 }
 
-.modal-confirmation {
-    font-size: 2.5rem;
-    font-weight: 200;
-    width: 90%;
-    height: 100%;
-    flex-direction: column;
-    text-align: center;
-    align-items: center;
-    justify-content: center;
-    display: none;
-    color: #ffffff;
-    margin: 0 5%;
-}
-
-#btn-confirmation {
-    position: absolute;
-    bottom: 10px;
-}
-
-label {
-    font-family: var(--font-default);
-    font-size: 17px;
-    font-weight: normal;
-    display: inline-block;
-    margin-bottom: 11px;
-    margin-top: 6px;
-}
-
-input {
-    border: 0.8px solid #ccc;
-    outline: none;
-    background-color: white;
-    width: 100%;
+.formData {
     margin: auto;
+    width: 85%;
+    display: block;
+    position: relative;
 }
 
 .text-control {
@@ -209,6 +183,15 @@ input {
     font-size: 17px;
     height: 25px;
     padding: 4%;
+}
+
+label {
+    font-family: var(--font-default);
+    font-size: 17px;
+    font-weight: normal;
+    display: inline-block;
+    margin-bottom: 11px;
+    margin-top: 6px;
 }
 
 .submitSending {
@@ -223,7 +206,7 @@ input {
 
 .errorMessage {
     font-size: 17px;
-    color: #db2f40;
+    color: $red;
     display: none;
     margin: 10px auto 10px auto;
     text-align: left;
@@ -231,18 +214,13 @@ input {
 }
 
 .errorBorder {
-    border: 2px solid #db2f40;
-}
-
-.formData {
-    margin: auto;
-    width: 85%;
+    border: 2px solid $red;
 }
 
 .formData[data-error]::after {
     content: attr(data-error);
     font-size: 0.4em;
-    color: #db2f40;
+    color: $red;
     display: block;
     margin-top: 10px;
     margin-bottom: 10px;
@@ -290,7 +268,7 @@ input {
     justify-content: center;
     width: 17px;
     height: 17px;
-    border: 2px solid #279e7a;
+    border: 2px solid $green;
     border-radius: 50%;
     margin-right: 5px;
 }
@@ -303,7 +281,7 @@ input {
     align-self: center;
     width: 13px;
     height: 13px;
-    background-color: #279e7a;
+    background-color: $green;
     border-radius: 50%;
     transition: 0.3s;
     opacity: 0;
@@ -319,7 +297,7 @@ input {
 }
 
 .checkbox-input:checked+.checkbox2-label .checkbox-icon {
-    background: #279e7a;
+    background: $green;
 }
 
 .checkbox2-label .checkbox-icon {
@@ -374,7 +352,7 @@ input {
 
 .btn-submit {
     width: 45%;
-    background: #fe142f;
+    background: $red;
     display: block;
     margin: 20px auto;
     border-radius: 7px;
@@ -385,11 +363,11 @@ input {
 }
 
 .btn-signup {
-    background: #fe142f;
+    background: $red;
     display: block;
     outline: none;
     text-transform: capitalize;
-    font-size: 1.3rem;
+    font-size: 23px;
     padding: 15px 23px;
     margin: 60px 0 60px 0;
     border-radius: 7px;
@@ -400,6 +378,25 @@ input {
 
 .div-btn-mobile {
     display: none;
+}
+
+.modal-confirmation {
+    font-size: 2.5rem;
+    font-weight: 200;
+    width: 90%;
+    height: 700px;
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    display: none;
+    color: #ffffff;
+    margin: 0 5%;
+}
+
+#btn-confirmation {
+    position: absolute;
+    bottom: 10px;
 }
 
 /* custom select styles */
@@ -427,8 +424,8 @@ input {
     width: 11px;
     height: 11px;
     border: 3px solid transparent;
-    border-bottom-color: #f00;
-    border-left-color: #f00;
+    border-bottom-color: $red;
+    border-left-color: $red;
     transform: rotate(-48deg);
     border-radius: 5px 0 5px 0;
 }
@@ -540,7 +537,7 @@ footer {
 }
 
 .copyrights {
-    color: #fe142f;
+    color: $red;
     font-size: 1rem;
     font-weight: bolder;
     width: 100%;
@@ -569,7 +566,6 @@ footer {
 
     .modal-confirmation {
         max-width: 400px;
-        height: 700px;
     }
 
     .text-control {
@@ -634,6 +630,7 @@ footer {
     nav {
         width: 100%;
         margin: auto;
+        padding: 2.5rem 0 1rem 0;
     }
 
     main {
@@ -698,6 +695,11 @@ footer {
         font-size: 1.8rem;
     }
 
+    .close {
+        right: 15px;
+        top: 15px;
+    }
+
     .bground {
         background-color: transparent;
     }
@@ -709,20 +711,19 @@ footer {
 
     .content {
         max-width: 100%;
-        height: 100%;
+        height: auto;
         margin: 120px 0 0 0;
         border-radius: 0;
     }
 
     .modal-confirmation {
         max-width: 100%;
-        height: 100%;
     }
 
     .text-control {
         border-radius: 8px;
         font-size: 20px;
-        height: 40px;
+        height: 20px;
     }
 
     label {
@@ -747,11 +748,6 @@ footer {
     .btn-submit {
         width: 35%;
         font-size: 20px;
-    }
-
-    .close {
-        right: 25px;
-        top: 20px;
     }
 
     .copyrights {
@@ -780,6 +776,11 @@ footer {
 
     .btn-signup {
         font-size: 1.3rem;
+    }
+
+    .close {
+        right: 10px;
+        top: 10px;
     }
 
     .text-control {
@@ -816,6 +817,10 @@ footer {
         font-size: 20px;
     }
 
+    nav {
+        padding: 1.5rem 0 0.2rem 0;
+    }
+
     .nav-ul li a {
         font-size: 12px;
     }
@@ -832,8 +837,14 @@ footer {
         font-size: 0.7rem;
     }
 
+    .close {
+        right: 4px;
+        top: 4px;
+        transform: scale(0.5)
+    }
+
     .content {
-        margin: 100px 0 0 0;
+        margin: 80px 0 0 0;
     }
 
     .text-control {
@@ -875,7 +886,7 @@ footer {
 
 @media screen and (max-width: 280px) {
     .hamburger {
-        font-size: 15px;
+        font-size: 10px;
     }
 
     .hero-headline {
@@ -890,11 +901,21 @@ footer {
         font-size: 0.5rem;
     }
 
+    .close {
+        right: 2px;
+        top: 2px;
+        transform: scale(0.4)
+    }
+
     .content {
-        margin: 90px 0 0 0;
+        margin: 60px 0 0 0;
     }
 
     label {
+        font-size: 12px;
+    }
+
+    .text-control {
         font-size: 12px;
     }
 

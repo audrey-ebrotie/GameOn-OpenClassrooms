@@ -12,6 +12,9 @@ const modalBtn = document.querySelectorAll(".btn-signup");
 const formData = document.querySelectorAll(".formData");
 const closeModalBtn = document.getElementById('btn-close');
 
+const iconSuccess = document.querySelectorAll(".fas fa-check-circle");
+const iconError = document.querySelectorAll(".fas fa-exclamation-circle");
+
 const formFirstName = document.getElementById('first-name');
 const formLastName = document.getElementById('last-name');
 const formEmail = document.getElementById('email');
@@ -48,6 +51,18 @@ modalBtn.forEach((btn) => btn.addEventListener("click", launchModal));
 
 function launchModal() {
   modalbg.style.display = "block";
+  document.body.style.overflowY = "hidden"; // Empêche le scrolling du body quand modal ouvert
+  document.body.style.height = "100%"; 
+  window.scrollTo(0,0);
+}
+
+// Ferme le modal si clic à l'extérieur
+window.onclick = function(event) {
+  if(event.target == modalbg) {
+    modalbg.style.display = "none";
+    document.body.style.overflow = "auto"; 
+    document.body.style.height = "auto";  
+  }
 }
 
 // fermer formulaire
@@ -58,6 +73,8 @@ closeConfirmationBtn.addEventListener('click', closeModal);
 
 function closeModal() {
   modalbg.style.display = "none";
+  document.body.style.overflow = "auto"; // Réative le scrolling du body quand modal fermé
+  document.body.style.height = "auto";
 
   // Réinitialise l'état du form après fermeture
   formFirstName.value = " ";
@@ -104,6 +121,7 @@ function closeModal() {
 
 // <!-- ******************************** Prénom ***************************** -->
 function validateFirstName(){
+
   if(formFirstName.value.length <= 1)
   {
     firstNameErrorMessage.textContent = "Veuillez entrer 2 caractères ou plus pour le champ du prénom.";
@@ -116,6 +134,7 @@ function validateFirstName(){
     formFirstName.style.border = "2px solid #279e7a";
     return true;   
   }
+
 }
 
 // <!-- ******************************** Nom ***************************** -->
@@ -223,7 +242,7 @@ function validateLocation(){
   }
 
   else {
-    locationErrorMessage.textContent = "Vous devez choisir une option.";
+    locationErrorMessage.textContent = "Vous devez choisir au moins une option.";
     locationErrorMessage.style.display = "block";  
     return false;  
   }
