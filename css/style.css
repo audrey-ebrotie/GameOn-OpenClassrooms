@@ -335,40 +335,13 @@ label {
           justify-content: center;
   -ms-flex-item-align: center;
       align-self: center;
-  width: 17px;
-  height: 17px;
+  width: 13px;
+  height: 13px;
   background-color: #279e7a;
   border-radius: 50%;
   -webkit-transition: 0.3s;
   transition: 0.3s;
   opacity: 0;
-}
-
-.checkbox2-label .checkbox-icon {
-  border-radius: 4px;
-  border: 2px solid transparent;
-  background: #c4c4c4;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -ms-flex-line-pack: center;
-      align-content: center;
-  padding-bottom: 3px;
-}
-
-.checkbox2-label .checkbox-icon::after {
-  width: 7px;
-  height: 4px;
-  border-radius: 2px;
-  background: transparent;
-  border: 2px solid transparent;
-  border-bottom-color: #fff;
-  border-left-color: #fff;
-  -webkit-transform: rotate(-65deg);
-          transform: rotate(-65deg);
 }
 
 .checkbox-input {
@@ -382,6 +355,33 @@ label {
 
 .checkbox-input:checked + .checkbox2-label .checkbox-icon {
   background: #279e7a;
+}
+
+.checkbox2-label .checkbox-icon {
+  border-radius: 3px;
+  border: 0;
+  background: #c4c4c4;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -ms-flex-line-pack: center;
+      align-content: center;
+  padding-bottom: 3px;
+}
+
+.checkbox2-label .checkbox-icon::after {
+  width: 8px;
+  height: 5px;
+  border-radius: 2px;
+  background: transparent;
+  border: 2px solid transparent;
+  border-bottom-color: #fff;
+  border-left-color: #fff;
+  -webkit-transform: rotate(-55deg);
+          transform: rotate(-55deg);
 }
 
 .close {
@@ -828,8 +828,8 @@ footer {
   }
   .checkbox-label .checkbox-icon,
   .checkbox2-label .checkbox-icon {
-    width: 25px;
-    height: 25px;
+    width: 20px;
+    height: 20px;
   }
   .errorMessage {
     font-size: 20px;
@@ -880,13 +880,12 @@ footer {
   }
   .checkbox-label .checkbox-icon,
   .checkbox2-label .checkbox-icon {
-    width: 16px;
-    height: 16px;
+    width: 17px;
+    height: 17px;
   }
   .checkbox2-label .checkbox-icon::after {
     width: 5px;
-    height: 4px;
-    padding: 0;
+    height: 3px;
   }
   .btn-submit {
     width: 50%;

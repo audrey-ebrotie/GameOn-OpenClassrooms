@@ -279,33 +279,12 @@ label {
     display: inline-flex;
     justify-content: center;
     align-self: center;
-    width: 17px;
-    height: 17px;
+    width: 13px;
+    height: 13px;
     background-color: $green;
     border-radius: 50%;
     transition: 0.3s;
     opacity: 0;
-}
-
-.checkbox2-label .checkbox-icon {
-    border-radius: 4px;
-    border: 2px solid transparent;
-    background: #c4c4c4;
-    display: flex;
-    justify-content: center;
-    align-content: center;
-    padding-bottom: 3px;
-}
-
-.checkbox2-label .checkbox-icon::after {
-    width: 7px;
-    height: 4px;
-    border-radius: 2px;
-    background: transparent;
-    border: 2px solid transparent;
-    border-bottom-color: #fff;
-    border-left-color: #fff;
-    transform: rotate(-65deg);
 }
 
 .checkbox-input {
@@ -319,6 +298,27 @@ label {
 
 .checkbox-input:checked+.checkbox2-label .checkbox-icon {
     background: $green;
+}
+
+.checkbox2-label .checkbox-icon {
+    border-radius: 3px;
+    border: 0;
+    background: #c4c4c4;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    padding-bottom: 3px;
+}
+
+.checkbox2-label .checkbox-icon::after {
+    width: 8px;
+    height: 5px;
+    border-radius: 2px;
+    background: transparent;
+    border: 2px solid transparent;
+    border-bottom-color: #fff;
+    border-left-color: #fff;
+    transform: rotate(-55deg);
 }
 
 .close {
@@ -737,8 +737,8 @@ footer {
 
     .checkbox-label .checkbox-icon,
     .checkbox2-label .checkbox-icon {
-        width: 25px;
-        height: 25px;
+        width: 20px;
+        height: 20px;
     }
 
     .errorMessage {
@@ -802,14 +802,13 @@ footer {
 
     .checkbox-label .checkbox-icon,
     .checkbox2-label .checkbox-icon {
-        width: 16px;
-        height: 16px;
+        width: 17px;
+        height: 17px;
     }
 
     .checkbox2-label .checkbox-icon::after {
         width: 5px;
-        height: 4px;
-        padding: 0;
+        height: 3px;
     }
 
     .btn-submit {
