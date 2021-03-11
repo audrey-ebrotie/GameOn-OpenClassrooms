@@ -26,8 +26,8 @@ const formLocation3 = document.getElementById('location3');
 const formLocation4 = document.getElementById('location4');
 const formLocation5 = document.getElementById('location5');
 const formLocation6 = document.getElementById('location6');
-const formCheckbox1 = document.getElementById('checkbox1');
-const formCheckbox2 = document.getElementById('checkbox2');
+const formCheckboxTerms = document.getElementById('checkbox2-1');
+const formCheckbox2 = document.getElementById('checkbox2-2');
 
 const formSubmitBtn = document.getElementById('btn-submit');
 
@@ -37,7 +37,7 @@ const emailErrorMessage = document.getElementById('email_errorMessage');
 const birthdateErrorMessage = document.getElementById('birthdate_errorMessage');
 const quantityErrorMessage = document.getElementById('quantity_errorMessage');
 const locationErrorMessage = document.getElementById('location_errorMessage');
-const checkbox1ErrorMessage = document.getElementById('checkbox1_errorMessage');
+const checkboxTermsErrorMessage = document.getElementById('checkboxTerms_errorMessage');
 
 const submitSendingMessage = document.getElementById('modal-submitSending');
 
@@ -88,7 +88,7 @@ function closeModal() {
   formLocation4.checked = false; 
   formLocation5.checked = false; 
   formLocation6.checked = false; 
-  formCheckbox1.checked = false;
+  formCheckboxTerms.checked = false;
   formCheckbox2.checked = false;
 
     // Retire les messages et bordures d'erreur après fermeture modal
@@ -108,7 +108,7 @@ function closeModal() {
   formQuantity.style.border = "none"; 
 
   locationErrorMessage.style.display = "none";  
-  checkbox1ErrorMessage.style.display = "none";  
+  checkboxTermsErrorMessage.style.display = "none";  
   submitSendingMessage.style.display = "none"; 
 
     // Réinitialise l'état du form après validation et retire affichage final confirmation
@@ -250,14 +250,14 @@ function validateLocation(){
 }
 
 // <!-- ******************************** Conditions d'utilisation ***************************** -->
-function validateCheckbox1(){
-  if(formCheckbox1.checked) {
-    checkbox1ErrorMessage.style.display = "none";    
+function validateCheckboxTerms(){
+  if(formCheckboxTerms.checked) {
+    checkboxTermsErrorMessage.style.display = "none";    
     return true;
 
   } else {
-    checkbox1ErrorMessage.textContent = "Vous devez vérifier que vous acceptez les termes et conditions.";
-    checkbox1ErrorMessage.style.display = "block";  
+    checkboxTermsErrorMessage.textContent = "Vous devez vérifier que vous acceptez les termes et conditions.";
+    checkboxTermsErrorMessage.style.display = "block";  
     return false;  
   }
   
@@ -274,7 +274,7 @@ formSubmitBtn.addEventListener('click', function(e) {
   && validateBirthdate()
   && validateQuantity()
   && validateLocation()
-  && validateCheckbox1())
+  && validateCheckboxTerms())
   {
     submitSendingMessage.style.display = "block";
     setTimeout(showConfirmationScreen, 2000); /* délai affichage final confirmation */
