@@ -894,7 +894,7 @@ footer {
   .checkbox2-icon {
     width: 15px;
     height: 15px;
-    padding-bottom: 0;
+    padding-bottom: 1.5px;
   }
   .checkbox2-icon::after {
     width: 3px;

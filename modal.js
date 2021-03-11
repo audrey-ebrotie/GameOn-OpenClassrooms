@@ -12,9 +12,6 @@ const modalBtn = document.querySelectorAll(".btn-signup");
 const formData = document.querySelectorAll(".formData");
 const closeModalBtn = document.getElementById('btn-close');
 
-const iconSuccess = document.querySelectorAll(".fas fa-check-circle");
-const iconError = document.querySelectorAll(".fas fa-exclamation-circle");
-
 const formFirstName = document.getElementById('first-name');
 const formLastName = document.getElementById('last-name');
 const formEmail = document.getElementById('email');
@@ -53,7 +50,7 @@ function launchModal() {
   modalbg.style.display = "block";
   document.body.style.overflowY = "hidden"; // Empêche le scrolling du body quand modal ouvert
   document.body.style.height = "100%"; 
-  window.scrollTo(0,0);
+  window.scrollTo(0,0); // scroll en haut de la page à l'ouverture du modal
 }
 
 // Ferme le modal si clic à l'extérieur
@@ -116,7 +113,6 @@ function closeModal() {
   confirmationScreen.style.display = "none";
 }
 
-
 // Vérifie si la saisie est valide, sinon message d'erreur + bordure rouge
 
 // <!-- ******************************** Prénom ***************************** -->
@@ -134,7 +130,6 @@ function validateFirstName(){
     formFirstName.style.border = "2px solid #279e7a";
     return true;   
   }
-
 }
 
 // <!-- ******************************** Nom ***************************** -->
@@ -177,10 +172,15 @@ let email = document.getElementById("email").value;
 }
 
 // <!-- ******************************** Date de naissance ***************************** -->
-function validateBirthdate(){
-  if(!formBirthdate.value)
+function validateBirthdate(){  
+  const today = new Date();
+  const birth = new Date(formBirthdate.value);
+  const isEmpty = !formBirthdate.value; // Vérifie si la date est non renseignée ...
+  const isFuturistDate = birth > today; // ou postérieure à ce jour
+
+  if(isEmpty || isFuturistDate)
   {
-    birthdateErrorMessage.textContent = "Vous devez entrer votre date de naissance.";
+    birthdateErrorMessage.textContent = isEmpty ? "Vous devez entrer votre date de naissance." : "Vous devez entrer une date antérieure à ce jour." ;
     birthdateErrorMessage.style.display = "block";    
     formBirthdate.style.border="2px solid #db2f40";
     return false;
@@ -192,7 +192,7 @@ function validateBirthdate(){
   }
 }
 
-// <!-- ******************************** Tournois ***************************** -->
+// <!-- ******************************** Nbre de tournois ***************************** -->
 function validateQuantity(){
   if(formQuantity.value < 0 || formQuantity.value === "")
   {
@@ -246,7 +246,6 @@ function validateLocation(){
     locationErrorMessage.style.display = "block";  
     return false;  
   }
-
 }
 
 // <!-- ******************************** Conditions d'utilisation ***************************** -->
@@ -260,7 +259,6 @@ function validateCheckboxTerms(){
     checkboxTermsErrorMessage.style.display = "block";  
     return false;  
   }
-  
 }
 
 // Si tous les champs bien remplis > Submit btn = message puis affichage final confirmation
@@ -277,7 +275,7 @@ formSubmitBtn.addEventListener('click', function(e) {
   && validateCheckboxTerms())
   {
     submitSendingMessage.style.display = "block";
-    setTimeout(showConfirmationScreen, 2000); /* délai affichage final confirmation */
+    setTimeout(showConfirmationScreen, 2000); /* 2s délai affichage final confirmation */
   }
 });
 
@@ -286,5 +284,4 @@ function showConfirmationScreen()
 {
   formScreen.style.display = "none"; /* masque le formulaire une fois validé */
   confirmationScreen.style.display = "inline-flex";
-
 }
