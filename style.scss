@@ -536,7 +536,7 @@ label {
 }
 
 footer {
-    max-width: 1400px;
+    width: 100%;
     margin: auto;
     font-family: var(--font-slab);
 }
@@ -546,8 +546,7 @@ footer {
     font-size: 1rem;
     font-weight: bolder;
     width: 100%;
-    margin: 4rem 0 0.5rem 1rem;
-    padding-left: 1rem;
+    margin: 4rem 0 1rem 1rem;
 }
 
 // ********************************** RESPONSIVE **********************************
