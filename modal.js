@@ -76,7 +76,7 @@ function closeModal() {
   document.body.style.overflow = "auto"; // Réative le scrolling du body quand modal fermé
   document.body.style.height = "auto";
 
-  // Réinitialise l'état du form après fermeture
+  // Réinitialise l'état du form après fermeture (par la croix uniquement)
   formFirstName.value = " ";
   formLastName.value = " ";
   formEmail.value = " ";
@@ -91,7 +91,7 @@ function closeModal() {
   formCheckboxTerms.checked = false;
   formCheckbox2.checked = false;
 
-    // Retire les messages et bordures d'erreur après fermeture modal
+    // Retire les messages et bordures d'erreur après fermeture modal (par la croix uniquement)
   firstNameErrorMessage.style.display = "none"; 
   formFirstName.style.border = "none"; 
   
