@@ -9,7 +9,6 @@ hamburger.addEventListener('click', () => {
 // DOM Elements (variables)
 const modalbg = document.querySelector(".bground");
 const modalBtn = document.querySelectorAll(".btn-signup");
-const formData = document.querySelectorAll(".formData");
 const closeModalBtn = document.getElementById('btn-close');
 
 const formFirstName = document.getElementById('first-name');
@@ -41,7 +40,6 @@ const submitSendingMessage = document.getElementById('modal-submitSending');
 const formScreen = document.getElementById('form-screen');
 const confirmationScreen = document.getElementById('confirmation-screen');
 const closeConfirmationBtn = document.getElementById('btn-confirmation');
-const confirmationTxt = document.getElementById('confirmation-text');
 
 // ouvrir formulaire
 modalBtn.forEach((btn) => btn.addEventListener("click", launchModal));
@@ -150,7 +148,7 @@ function validateLastName(){
 
 // <!-- ******************************** Email ***************************** -->
 function checkEmail(email) {
-  const re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+  const re = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
   return re.test(email);
 }
 
