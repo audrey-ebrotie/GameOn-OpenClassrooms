@@ -209,7 +209,7 @@ function validateQuantity(){
 // <!-- ******************************** Villes ***************************** -->
 function validateLocation(){
   let boxChecked = false;
-  
+
   if(formLocation1.checked){
     boxChecked = true;
   }
