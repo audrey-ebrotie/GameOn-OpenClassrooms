@@ -326,33 +326,13 @@ label {
     background: $green;
 }
 
-.close {
+.btn-close {
     position: absolute;
     right: 15px;
     top: 15px;
-    width: 32px;
-    height: 32px;
+    font-size: 25px;
     opacity: 1;
     cursor: pointer;
-    transform: scale(0.7);
-}
-
-.close:before,
-.close:after {
-    position: absolute;
-    left: 15px;
-    content: " ";
-    height: 33px;
-    width: 3px;
-    background-color: #fff;
-}
-
-.close:before {
-    transform: rotate(45deg);
-}
-
-.close:after {
-    transform: rotate(-45deg);
 }
 
 .btn-submit {
@@ -699,7 +679,7 @@ footer {
         font-size: 1.8rem;
     }
 
-    .close {
+    .btn-close {
         right: 15px;
         top: 15px;
     }
@@ -776,7 +756,7 @@ footer {
         font-size: 1.3rem;
     }
 
-    .close {
+    .btn-close {
         right: 10px;
         top: 10px;
     }
@@ -850,10 +830,10 @@ footer {
         font-size: 0.7rem;
     }
 
-    .close {
-        right: 4px;
-        top: 4px;
-        transform: scale(0.5)
+    .btn-close {
+        right: 12px;
+        top: 12px;
+        font-size: 15px;
     }
 
     .content {
@@ -918,10 +898,9 @@ footer {
         font-size: 0.5rem;
     }
 
-    .close {
-        right: 2px;
-        top: 2px;
-        transform: scale(0.4)
+    .btn-close {
+        right: 6px;
+        top: 6px;
     }
 
     .content {

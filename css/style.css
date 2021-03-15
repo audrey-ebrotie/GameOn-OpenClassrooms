@@ -395,36 +395,13 @@ label {
   background: #279e7a;
 }
 
-.close {
+.btn-close {
   position: absolute;
   right: 15px;
   top: 15px;
-  width: 32px;
-  height: 32px;
+  font-size: 25px;
   opacity: 1;
   cursor: pointer;
-  -webkit-transform: scale(0.7);
-          transform: scale(0.7);
-}
-
-.close:before,
-.close:after {
-  position: absolute;
-  left: 15px;
-  content: " ";
-  height: 33px;
-  width: 3px;
-  background-color: #fff;
-}
-
-.close:before {
-  -webkit-transform: rotate(45deg);
-          transform: rotate(45deg);
-}
-
-.close:after {
-  -webkit-transform: rotate(-45deg);
-          transform: rotate(-45deg);
 }
 
 .btn-submit {
@@ -804,7 +781,7 @@ footer {
   .btn-signup {
     font-size: 1.8rem;
   }
-  .close {
+  .btn-close {
     right: 15px;
     top: 15px;
   }
@@ -866,7 +843,7 @@ footer {
   .btn-signup {
     font-size: 1.3rem;
   }
-  .close {
+  .btn-close {
     right: 10px;
     top: 10px;
   }
@@ -925,11 +902,10 @@ footer {
   .btn-signup {
     font-size: 0.7rem;
   }
-  .close {
-    right: 4px;
-    top: 4px;
-    -webkit-transform: scale(0.5);
-            transform: scale(0.5);
+  .btn-close {
+    right: 12px;
+    top: 12px;
+    font-size: 15px;
   }
   .content {
     margin: 80px 0 0 0;
@@ -980,11 +956,9 @@ footer {
   .btn-signup {
     font-size: 0.5rem;
   }
-  .close {
-    right: 2px;
-    top: 2px;
-    -webkit-transform: scale(0.4);
-            transform: scale(0.4);
+  .btn-close {
+    right: 6px;
+    top: 6px;
   }
   .content {
     margin: 60px 0 0 0;

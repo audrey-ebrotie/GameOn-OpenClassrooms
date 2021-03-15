@@ -270,7 +270,7 @@ formSubmitBtn.addEventListener('click', function(e) {
   && validateBirthdate()
   && validateQuantity()
   && validateLocation()
-  && validateCheckboxTerms())
+  && validateCheckboxTerms()) /* Vérifie que toutes les fonctions soient évaluées à "true" */
   {
     submitSendingMessage.style.display = "block";
     setTimeout(showConfirmationScreen, 2000); /* 2s délai affichage final confirmation */
