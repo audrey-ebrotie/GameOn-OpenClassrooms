@@ -90,7 +90,7 @@ nav {
   border-radius: 10px;
 }
 
-.nav-ul li a:hover .underline {
+.nav-ul li a.active .underline {
   border-bottom: solid 2px white;
   padding-top: 5px;
 }

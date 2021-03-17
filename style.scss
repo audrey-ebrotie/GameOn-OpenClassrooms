@@ -80,7 +80,7 @@ nav {
     border-radius: 10px;
 }
 
-.nav-ul li a:hover .underline {
+.nav-ul li a.active .underline {
     border-bottom: solid 2px rgb(255, 255, 255);
     padding-top: 5px;
 }

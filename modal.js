@@ -149,7 +149,7 @@ function validateLastName(){
 // <!-- ******************************** Email ***************************** -->
 function checkEmail(email) {
   const re = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
-  return re.test(email);
+  return re.test(email); // expression régulière : on compare la saisie avec l'exp
 }
 
 function validateEmail() {
@@ -171,7 +171,7 @@ let email = document.getElementById("email").value;
 
 // <!-- ******************************** Date de naissance ***************************** -->
 function validateBirthdate(){  
-  const today = new Date();
+  const today = new Date(); //on crée l'objet Date = date à l'instant T //
   const birth = new Date(formBirthdate.value);
   const isEmpty = !formBirthdate.value; // Vérifie si la date est non renseignée ...
   const isFuturistDate = birth > today; // ou postérieure à ce jour
@@ -192,7 +192,7 @@ function validateBirthdate(){
 
 // <!-- ******************************** Nbre de tournois ***************************** -->
 function validateQuantity(){
-  if(formQuantity.value < 0 || formQuantity.value === "")
+  if(formQuantity.value < 0 || !formQuantity.value)
   {
     quantityErrorMessage.textContent = "Vous devez saisir un chiffre ou nombre valide. ";
     quantityErrorMessage.style.display = "block"; 
