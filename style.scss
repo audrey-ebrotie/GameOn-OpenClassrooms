@@ -176,6 +176,15 @@ form {
     position: relative;
 }
 
+.formData-end {
+    margin: 5px auto 5px auto;
+    width: 85%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+}
+
 .text-control {
     margin: auto;
     width: 92%;
@@ -237,7 +246,7 @@ label {
 .formDataLocations {
     display: flex;
     flex-direction: row;
-    margin: auto;
+    margin: 10px auto 10px auto;
     width: 85%;
     flex-wrap: wrap;
 }
@@ -251,7 +260,7 @@ label {
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
-    margin-right: 10px;
+    margin: 5px 10px 10px 0;
 }
 
 .checkbox-label,
@@ -260,6 +269,11 @@ label {
     font-weight: normal;
     display: flex;
     align-items: center;
+    margin: 0;
+}
+
+.checkbox2-label {
+    width: 95%;
 }
 
 .checkbox-icon {
@@ -289,8 +303,8 @@ label {
     display: inline-flex;
     justify-content: center;
     align-content: center;
-    width: 17px;
-    height: 17px;
+    width: 20px;
+    height: 20px;
     margin-right: 5px;
     border-radius: 3px;
     border: 0;

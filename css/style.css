@@ -203,6 +203,21 @@ form {
   position: relative;
 }
 
+.formData-end {
+  margin: 5px auto 5px auto;
+  width: 85%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  position: relative;
+}
+
 .text-control {
   margin: auto;
   width: 92%;
@@ -270,7 +285,7 @@ label {
   -webkit-box-direction: normal;
       -ms-flex-direction: row;
           flex-direction: row;
-  margin: auto;
+  margin: 10px auto 10px auto;
   width: 85%;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
@@ -294,7 +309,7 @@ label {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  margin-right: 10px;
+  margin: 5px 10px 10px 0;
 }
 
 .checkbox-label,
@@ -307,6 +322,11 @@ label {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  margin: 0;
+}
+
+.checkbox2-label {
+  width: 95%;
 }
 
 .checkbox-icon {
@@ -351,8 +371,8 @@ label {
           justify-content: center;
   -ms-flex-line-pack: center;
       align-content: center;
-  width: 17px;
-  height: 17px;
+  width: 20px;
+  height: 20px;
   margin-right: 5px;
   border-radius: 3px;
   border: 0;

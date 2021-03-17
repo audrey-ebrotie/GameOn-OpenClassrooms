@@ -114,9 +114,10 @@ function closeModal() {
 // Vérifie si la saisie est valide, sinon message d'erreur + bordure rouge
 
 // <!-- ******************************** Prénom ***************************** -->
+
 function validateFirstName(){
 
-  if(formFirstName.value.length <= 1)
+  if(formFirstName.value.length <= 1 )
   {
     firstNameErrorMessage.textContent = "Veuillez entrer 2 caractères ou plus pour le champ du prénom.";
     firstNameErrorMessage.style.display = "block"; 
